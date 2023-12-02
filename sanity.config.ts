@@ -7,8 +7,7 @@ import {schemaTypes} from './schemas'
 export default defineConfig({
   name: 'default',
   title: 'greenspot',
-
-  projectId: '9vi84fw7',
+  projectId: '3l3i2q7j',
   dataset: 'production',
 
   plugins: [

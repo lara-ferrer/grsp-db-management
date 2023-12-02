@@ -13,15 +13,27 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
+      name: 'url',
+      title: 'URL',
+      type: 'string',
+    }),
+    defineField({
+      title: 'Categories',
+      name: 'categories',
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: { type: 'category' },
-        },
+          type: 'string'
+        }
       ],
+      options: {
+        list: [
+          { title: 'Flexitariano', value: 'flexitarian' },
+          { title: 'Vegetariano', value: 'vegetarian' },
+          { title: 'Vegano', value: 'vegan' }
+        ],
+        layout: 'tags'
+      }
     }),
     defineField({
       name: 'coverImage',
@@ -34,24 +46,19 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'openTime',
-      title: 'Open time',
-      type: 'datetime',
-      options: {
-        dateFormat: 'YYYY-MM-DD',
-        timeFormat: 'HH:mm',
-        timeStep: 15,
-      }
+      title: 'Coordinates',
+      name: 'coordinates',
+      type: 'geopoint'
     }),
     defineField({
-      name: 'closeTime',
-      title: 'Close time',
-      type: 'datetime',
-      options: {
-        dateFormat: 'YYYY-MM-DD',
-        timeFormat: 'HH:mm',
-        timeStep: 15,
-      }
+      name: 'city',
+      title: 'City',
+      type: 'reference',
+      to: { type: 'city' },
+    }),
+    defineField({
+      name: 'schedule',
+      type: 'schedule'
     }),
   ],
   preview: {
