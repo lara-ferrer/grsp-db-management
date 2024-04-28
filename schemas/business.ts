@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity'
 import { MdBusiness as icon } from 'react-icons/md'
 
 export default defineType({
-  name: 'restaurant',
-  title: 'Restaurants',
+  name: 'business',
+  title: 'Business',
   type: 'document',
   icon,
   fields: [
@@ -41,6 +41,16 @@ export default defineType({
       type: 'image',
     }),
     defineField({
+      name: 'images',
+      title: 'Business Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image'
+        }
+      ],
+    }),
+    defineField({
       name: 'address',
       title: 'Address',
       type: 'string',
@@ -59,6 +69,16 @@ export default defineType({
     defineField({
       name: 'schedule',
       type: 'schedule'
+    }),
+    defineField({
+      name: 'reviews',
+      type: 'array',
+      description: 'Reviews for the business received by users',
+      of: [
+        {
+          type: 'review'
+        }
+      ]
     }),
   ],
   preview: {

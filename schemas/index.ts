@@ -1,17 +1,17 @@
 import blockContent from './block-content'
 import businessCategory from './business-category'
 import city from './city'
+import { review } from './components/review'
 import { schedule } from './components/schedule'
-import restaurant from './restaurant'
-import restaurantCategory from './restaurant-category'
+import business from './business'
 import { timeValue } from './types/time-value'
 
 export const schemaTypes = [
   blockContent,
-  restaurant,
-  restaurantCategory,
+  business,
   businessCategory,
   city,
   timeValue,
-  schedule
+  schedule,
+  review
 ]
