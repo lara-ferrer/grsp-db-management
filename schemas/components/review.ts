@@ -25,6 +25,11 @@ export const review = defineType({
       title: 'Review',
       type: 'string',
     }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'date'
+    }),
   ],
   preview: {
     select: {

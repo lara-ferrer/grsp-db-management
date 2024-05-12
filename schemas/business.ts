@@ -18,8 +18,23 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      title: 'Categories',
-      name: 'categories',
+      title: 'Category',
+      name: 'category',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Restaurant', value: 'restaurant' },
+          { title: 'Cafe', value: 'cafe' },
+          { title: 'Fashion and beauty', value: 'fashion' },
+          { title: 'Leisure', value: 'leisure' }
+        ],
+        layout: 'radio',
+        direction: 'horizontal'
+      }
+    }),
+    defineField({
+      title: 'Subcategories',
+      name: 'subcategories',
       type: 'array',
       of: [
         {
@@ -28,11 +43,11 @@ export default defineType({
       ],
       options: {
         list: [
-          { title: 'Flexitariano', value: 'flexitarian' },
-          { title: 'Vegetariano', value: 'vegetarian' },
-          { title: 'Vegano', value: 'vegan' }
+          { title: 'Flexitarian', value: 'flexitarian' },
+          { title: 'Vegetarian', value: 'vegetarian' },
+          { title: 'Vegan', value: 'vegan' }
         ],
-        layout: 'tags'
+        layout: 'grid'
       }
     }),
     defineField({
@@ -80,6 +95,15 @@ export default defineType({
         }
       ]
     }),
+  ],
+  orderings: [
+    {
+      title: 'Reviews',
+      name: 'reviews',
+      by: [
+        {field: 'reviews', direction: 'asc'}
+      ]
+    },
   ],
   preview: {
     select: {
