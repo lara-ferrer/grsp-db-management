@@ -26,28 +26,25 @@ export const schedule = defineType({
           },
         }),
         defineField({
-          name: 'opening',
-          title: 'Opening Hour',
-          type: 'timeValue',
-        }),
-        defineField({
-          name: 'closing',
-          title: 'Closing Hour',
-          type: 'timeValue',
+          name: 'availableHours',
+          title: 'Available Hours',
+          type: 'array',
+          of: [
+            {
+              type: 'scheduleHours',
+            }
+          ]
         }),
       ],
       options: {columns: 3},
       preview: {
         select: {
-          openingDay: 'openingDay',
-          opening: 'opening',
-          closing: 'closing'
+          openingDay: 'openingDay'
         },
         prepare(selection) {
-          const { openingDay, opening, closing } = selection
+          const { openingDay } = selection
           return {
             title: openingDay,
-            subtitle: `${opening}h - ${closing}h`
           }
         },
       },
