@@ -6,6 +6,12 @@ export default defineType({
   title: 'Business',
   type: 'document',
   icon,
+  groups: [
+    {
+      name: 'contact',
+      title: 'Contact information',
+    },
+  ],
   fields: [
     defineField({
       name: 'name',
@@ -16,6 +22,24 @@ export default defineType({
       name: 'url',
       title: 'URL',
       type: 'string',
+    }),
+    defineField({
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+      group: 'contact'
+    }),
+    defineField({
+      name: 'phoneNumber',
+      title: 'Phone Number',
+      type: 'string',
+      group: 'contact'
+    }),
+    defineField({
+      name: 'website',
+      title: 'Website',
+      type: 'string',
+      group: 'contact'
     }),
     defineField({
       title: 'Category',
@@ -64,11 +88,6 @@ export default defineType({
           type: 'image'
         }
       ],
-    }),
-    defineField({
-      name: 'address',
-      title: 'Address',
-      type: 'string',
     }),
     defineField({
       title: 'Coordinates',

@@ -35,6 +35,15 @@ export const schedule = defineType({
             }
           ]
         }),
+        defineField({
+          name: 'isClosed',
+          title: 'Is closed?',
+          type: 'boolean',
+          initialValue: false,
+          options: {
+            layout: 'checkbox'
+          }
+        }),
       ],
       options: {columns: 3},
       preview: {
