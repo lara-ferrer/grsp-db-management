@@ -22,6 +22,11 @@ export default defineType({
       title: 'Cover Image',
       type: 'image',
     }),
+    defineField({
+      name: 'cityDescription',
+      title: 'City description',
+      type: 'string',
+    }),
   ],
   preview: {
     select: {
